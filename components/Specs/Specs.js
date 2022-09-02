@@ -43,7 +43,7 @@ export default function Specs() {
             <box-icon
               size="md"
               className="icon"
-              name="calendar"
+              name="grid-alt"
               type="solid"
               color="grey"
             ></box-icon>
@@ -95,8 +95,8 @@ export default function Specs() {
             <box-icon
               size="md"
               className="icon"
-              name="camera"
-              type="solid"
+              name="visual-studio"
+              type="logo"
               color="grey"
             ></box-icon>
             <p className="specs-title">Supported play modes</p>
