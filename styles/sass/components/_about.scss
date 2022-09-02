@@ -1,6 +1,7 @@
 .about-container {
   height: 35rem;
   width: 100%;
+  margin-bottom: 5rem;
 }
 
 .about {
@@ -11,45 +12,87 @@
   display: flex;
   flex-direction: row;
   justify-content: center;
+  transition:  all .3s ease-in-out;
 
   &__info {
     width: 50%;
     height: auto;
 
     .about__text {
+      //will become height: auto; on checkbox:checked
       height: 20rem;
+    //   height: auto;
       overflow: hidden;
       position: relative;
       font-size: 1rem;
       font-weight: 300;
       color: $color-greyDark;
+      transition:  all .3s ease-in-out;
 
-
-      
-      
-      p{
-        width: 95%;
+      p {
+        max-width: 95%;
         text-overflow: ellipsis;
-        display:block;
+        display: block;
+        line-height: 1.6rem;
+        text-align: justify;
+        transition:  all .3s ease-in-out;
+        padding-right: 0.75em;
 
-          &:first-child{
-            margin-bottom: 2rem;
-          }
+        &:first-child {
+          margin-bottom: 1.5rem;
+        }
 
-          &:nth-child(2){
-            overflow: hidden;
-            text-overflow: ellipsis;
-            display: -webkit-box;
-            -webkit-line-clamp: 3;
-            -webkit-box-orient: vertical;
-
-          }
-
+        &:nth-child(2) {
+          // overflow: hidden;
+          // text-overflow: ellipsis;
+          // white-space: normal;
+          // display: -webkit-box;
+          // -webkit-line-clamp: 2;
+          // -webkit-box-orient: vertical;
+          margin-bottom: 1.5rem;
+        }
       }
+    }
+
+    .read-more{
+        position: relative;
+        width: 8rem;
+        display: flex;
+        align-items: center;
+        margin-top: 1rem;
+        height: auto;
+        padding: 0;
+
+        .checkbox{
+            position: absolute;
+            top: 0;
+            left: 0;
+            height: 100%;
+            width: 100%;
+            opacity: 0;
+            cursor: pointer;
+
+            &:checked{
+                + .read-more--text::before{
+                    content: "-";
+                }
+            }
+        }
+        &--text{
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            gap: .5rem;
+            color: red;
+
+            &::before{
+                content: "+";
+                font-size: 2rem;
+            }
+        }
     }
   }
   &__photo {
-    
     width: 50%;
     position: relative;
     // aspect-ratio: 16/9;
@@ -58,8 +101,75 @@
     // height: 20rem;
 
     .img {
-      object-fit: contain;
-    //   trans
+      object-fit: cover;
+      //   trans
     }
   }
 }
+
+
+
+
+
+/* 
+styles for '...' 
+ - found online, this solution requires multiple media queries that truncate
+ the text based on how many lines are showing
+
+*/
+.block-with-text {
+  /* hide text if it more than N lines  */
+  overflow: hidden;
+  /* for set '...' in absolute position */
+  position: relative;
+  /* use this value to count block height */
+  line-height: 1.6em;
+  /* max-height = line-height (1.2) * lines max number (3) */
+  max-height: 1.6em;
+  /* fix problem when last visible word doesn't adjoin right side  */
+  // text-align: justify;
+  /* place for '...' */
+  // margin-right: -1em;
+  padding-right: 0.75em;
+}
+/* create the ... */
+.block-with-text::before {
+  /* points in the end */
+  content: "...";
+  /* absolute position */
+  position: absolute;
+  /* set position to right bottom corner of block */
+  right: 0;
+  bottom: 0;
+}
+/* hide ... if we have text, which is less than or equal to max lines */
+.block-with-text::after {
+  /* points in the end */
+  content: "";
+  /* absolute position */
+  position: absolute;
+  /* set position to right bottom corner of text */
+  right: 0;
+  /* set width and height */
+  width: 1em;
+  height: 1em;
+//   margin-top: 0.2em;
+  /* bg color = bg color under block */
+  background: white;
+}
+
+//above a 13 inch laptop - truncated to 2 lines
+@media only screen and (min-width: 1476px) {
+  .block-with-text {
+    /* max-height = line-height (1.2) * lines max number (3) */
+    max-height: 3.2em;
+  }
+}
+//above a small monitor  - truncated to 3 lines
+@media only screen and (min-width: 1685px) {
+  .block-with-text {
+    /* max-height = line-height (1.2) * lines max number (3) */
+    max-height: 4.8em;
+  }
+}
+

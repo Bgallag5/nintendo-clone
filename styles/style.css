@@ -79,6 +79,79 @@ html {
   align-items: center;
 }
 
+.btn-container {
+  height: 5rem;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.btn-container--about {
+  width: 65% !important;
+  justify-content: flex-start;
+  height: 3.25rem !important;
+  margin-bottom: 0.75rem;
+}
+.btn-container--about > * {
+  font-size: 1.15rem;
+}
+.btn-container .btn__download {
+  height: 3.75rem;
+  width: 96%;
+  border: none;
+  background-color: red;
+  color: white;
+  border-radius: 0.2rem;
+  padding: 1rem 0rem;
+  letter-spacing: 0.5px;
+  cursor: pointer;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  transition: all 0.05s ease-in-out;
+}
+.btn-container .btn__download:hover {
+  animation: wobbleGrow 0.5s ease-in-out;
+  width: 100%;
+  height: 4.25rem;
+  background-color: rgb(154, 0, 0);
+}
+.btn-container .btn__download:active {
+  transform: translateY(2px);
+}
+
+@keyframes wobbleGrow {
+  0% {
+    width: 96%;
+    height: 3.75rem;
+  }
+  50% {
+    width: 100%;
+    height: 4rem;
+  }
+  60% {
+    width: 98%;
+    height: 3.75rem;
+  }
+  100% {
+    width: 100%;
+    height: 4.25rem;
+    background-color: rgb(154, 0, 0);
+  }
+}
+@keyframes dip {
+  0% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(2px);
+  }
+  100% {
+    transform: translateY(0px);
+  }
+}
 .header-container {
   height: 7rem;
   width: 100%;
@@ -571,71 +644,7 @@ html {
   gap: 2px;
   align-items: center;
 }
-.display__game--info .btn-container {
-  height: 5rem;
-  width: 100%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-.display__game--info .btn-container .btn__download {
-  height: 3.75rem;
-  width: 96%;
-  align-self: center;
-  border: none;
-  background-color: red;
-  color: white;
-  border-radius: 0.2rem;
-  padding: 1rem 0rem;
-  letter-spacing: 0.5px;
-  cursor: pointer;
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  justify-content: center;
-  gap: 0.5rem;
-  transition: all 0.05s ease-in-out;
-}
-.display__game--info .btn-container .btn__download:hover {
-  animation: wobbleGrow 0.5s ease-in-out;
-  width: 100%;
-  height: 4.25rem;
-  background-color: rgb(154, 0, 0);
-}
-.display__game--info .btn-container .btn__download:active {
-  transform: translateY(2px);
-}
 
-@keyframes wobbleGrow {
-  0% {
-    width: 96%;
-    height: 3.75rem;
-  }
-  50% {
-    width: 100%;
-    height: 4rem;
-  }
-  60% {
-    width: 98%;
-    height: 3.75rem;
-  }
-  100% {
-    width: 100%;
-    height: 4.25rem;
-    background-color: rgb(154, 0, 0);
-  }
-}
-@keyframes dip {
-  0% {
-    transform: translateY(0px);
-  }
-  50% {
-    transform: translateY(2px);
-  }
-  100% {
-    transform: translateY(0px);
-  }
-}
 .slider-container {
   position: relative;
   height: 100%;
@@ -691,6 +700,7 @@ html {
 .about-container {
   height: 35rem;
   width: 100%;
+  margin-bottom: 5rem;
 }
 
 .about {
@@ -701,6 +711,7 @@ html {
   display: flex;
   flex-direction: row;
   justify-content: center;
+  transition: all 0.3s ease-in-out;
 }
 .about__info {
   width: 50%;
@@ -713,21 +724,54 @@ html {
   font-size: 1rem;
   font-weight: 300;
   color: #555;
+  transition: all 0.3s ease-in-out;
 }
 .about__info .about__text p {
-  width: 95%;
+  max-width: 95%;
   text-overflow: ellipsis;
   display: block;
+  line-height: 1.6rem;
+  text-align: justify;
+  transition: all 0.3s ease-in-out;
+  padding-right: 0.75em;
 }
 .about__info .about__text p:first-child {
-  margin-bottom: 2rem;
+  margin-bottom: 1.5rem;
 }
 .about__info .about__text p:nth-child(2) {
-  overflow: hidden;
-  text-overflow: ellipsis;
-  display: -webkit-box;
-  -webkit-line-clamp: 3;
-  -webkit-box-orient: vertical;
+  margin-bottom: 1.5rem;
+}
+.about__info .read-more {
+  position: relative;
+  width: 8rem;
+  display: flex;
+  align-items: center;
+  margin-top: 1rem;
+  height: auto;
+  padding: 0;
+}
+.about__info .read-more .checkbox {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  opacity: 0;
+  cursor: pointer;
+}
+.about__info .read-more .checkbox:checked + .read-more--text::before {
+  content: "-";
+}
+.about__info .read-more--text {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 0.5rem;
+  color: red;
+}
+.about__info .read-more--text::before {
+  content: "+";
+  font-size: 2rem;
 }
 .about__photo {
   width: 50%;
@@ -735,9 +779,67 @@ html {
   height: 20rem;
 }
 .about__photo .img {
-  object-fit: contain;
+  object-fit: cover;
 }
 
+/* 
+styles for '...' 
+ - found online, this solution requires multiple media queries that truncate
+ the text based on how many lines are showing
+
+*/
+.block-with-text {
+  /* hide text if it more than N lines  */
+  overflow: hidden;
+  /* for set '...' in absolute position */
+  position: relative;
+  /* use this value to count block height */
+  line-height: 1.6em;
+  /* max-height = line-height (1.2) * lines max number (3) */
+  max-height: 1.6em;
+  /* fix problem when last visible word doesn't adjoin right side  */
+  /* place for '...' */
+  padding-right: 0.75em;
+}
+
+/* create the ... */
+.block-with-text::before {
+  /* points in the end */
+  content: "...";
+  /* absolute position */
+  position: absolute;
+  /* set position to right bottom corner of block */
+  right: 0;
+  bottom: 0;
+}
+
+/* hide ... if we have text, which is less than or equal to max lines */
+.block-with-text::after {
+  /* points in the end */
+  content: "";
+  /* absolute position */
+  position: absolute;
+  /* set position to right bottom corner of text */
+  right: 0;
+  /* set width and height */
+  width: 1em;
+  height: 1em;
+  /* bg color = bg color under block */
+  background: white;
+}
+
+@media only screen and (min-width: 1476px) {
+  .block-with-text {
+    /* max-height = line-height (1.2) * lines max number (3) */
+    max-height: 3.2em;
+  }
+}
+@media only screen and (min-width: 1685px) {
+  .block-with-text {
+    /* max-height = line-height (1.2) * lines max number (3) */
+    max-height: 4.8em;
+  }
+}
 .specs-container {
   min-height: 30rem;
   width: 100%;
