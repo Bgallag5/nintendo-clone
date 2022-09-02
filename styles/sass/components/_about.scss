@@ -1,0 +1,65 @@
+.about-container {
+  height: 35rem;
+  width: 100%;
+}
+
+.about {
+  height: auto;
+  width: 75%;
+  margin: 0 auto;
+  min-height: 8rem;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+
+  &__info {
+    width: 50%;
+    height: auto;
+
+    .about__text {
+      height: 20rem;
+      overflow: hidden;
+      position: relative;
+      font-size: 1rem;
+      font-weight: 300;
+      color: $color-greyDark;
+
+
+      
+      
+      p{
+        width: 95%;
+        text-overflow: ellipsis;
+        display:block;
+
+          &:first-child{
+            margin-bottom: 2rem;
+          }
+
+          &:nth-child(2){
+            overflow: hidden;
+            text-overflow: ellipsis;
+            display: -webkit-box;
+            -webkit-line-clamp: 3;
+            -webkit-box-orient: vertical;
+
+          }
+
+      }
+    }
+  }
+  &__photo {
+    
+    width: 50%;
+    position: relative;
+    // aspect-ratio: 16/9;
+    height: 20rem;
+    // height: 17.5rem;
+    // height: 20rem;
+
+    .img {
+      object-fit: contain;
+    //   trans
+    }
+  }
+}

@@ -44,13 +44,14 @@
         justify-content: flex-start;
         align-items: flex-start;
         gap: .5rem;
-        padding-left: .5rem;
+        padding-left: 1rem;
         margin-top: .5rem;
 
         .footer__links--link{
             // padding-bottom: .25rem;
             padding: 0;
             width: 75%;
+            hyphens: auto;
         }
         .footer__links--link:hover{
              color: rgb(162, 0, 0);   
