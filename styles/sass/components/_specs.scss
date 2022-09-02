@@ -1,0 +1,60 @@
+.specs-container {
+  min-height: 30rem;
+  width: 100%;
+  height: auto;
+}
+
+.specs {
+  width: 65%;
+  max-width: 80rem;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+
+  &__item {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    height: 3rem;
+    border-bottom: 1px solid #999;
+    padding: 1.75rem .25rem;
+
+    &:first-child{
+        border-top: 1px solid $color-greyLight;
+    }
+
+    &--title {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      width: 33.33%;
+      gap: 1rem;
+      font-size: 1.1rem;
+      font-weight: 400;
+      color:#333;
+
+    }
+
+    &--info {
+      display: flex;
+    //   flex: 1;
+      font-size: 1rem;
+      font-weight: 300;
+      color: $color-greyDark;
+      line-height: 1.25rem;
+      width: 60%;
+
+      .info-red{
+        display: flex;
+        flex-direction: row;
+        gap: 1rem;
+        align-items: center;
+        color: red;
+        font-weight: 500;
+        font-size: 1rem;
+        text-decoration: underline;
+        cursor: pointer;
+      }
+    }
+  }
+}
