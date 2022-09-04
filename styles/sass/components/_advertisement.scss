@@ -1,0 +1,38 @@
+.ad{
+    margin-top: 0;
+    height: 3rem;
+    background: whitesmoke;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: .25rem;
+
+}
+
+.ad-icon{
+    color: red;
+    margin-right: .5rem;
+}
+
+.ad-text{
+    font-size: .85rem;
+    font-weight: 400;
+    color: #666;
+}
+
+.ad-text-bold{
+    font-size: 1rem;
+    font-weight: 600;
+}
+
+.underline{
+text-decoration: underline;
+cursor: pointer;
+}
+
+.restrictions{
+    margin-right: 2rem;
+    padding-right: 2rem;
+    border-right: 1px solid grey;
+}
