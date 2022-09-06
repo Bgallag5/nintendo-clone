@@ -18,7 +18,6 @@ import HeaderDropdown from "./HeaderDropdown";
 import Logo from "../Logo";
 
 export default function Header() {
-  const [showDropdown, setShowDropdown] = useState(false);
   const [activeTab, setActiveTab] = useState(null);
 
 
