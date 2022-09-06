@@ -1,18 +1,16 @@
 import React from "react";
 
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faCalendar, faUser, } from "@fortawesome/free-regular-svg-icons";
+import { faBuilding, faGear, faBars, faDatabase, faChild, faGlobe } from "@fortawesome/free-solid-svg-icons";
+
 export default function Specs() {
   return (
     <div className="specs-container">
       <div className="specs">
         <div className="specs__item">
           <span className="specs__item--title">
-            <box-icon
-              size="md"
-              className="icon"
-              name="calendar"
-              type="solid"
-              color="grey"
-            ></box-icon>
+        <FontAwesomeIcon icon={faCalendar} />
             <p className="specs-title">Release Date</p>
           </span>
           <span className="specs__item--info">
@@ -21,13 +19,7 @@ export default function Specs() {
         </div>
         <div className="specs__item">
           <span className="specs__item--title">
-            <box-icon
-              size="md"
-              className="icon"
-              name="user"
-              type="solid"
-              color="grey"
-            ></box-icon>
+          <FontAwesomeIcon icon={faUser} />
             <p className="specs-title">No. of players</p>
           </span>
           <span className="specs__item--info">
@@ -40,13 +32,7 @@ export default function Specs() {
         </div>
         <div className="specs__item">
           <span className="specs__item--title">
-            <box-icon
-              size="md"
-              className="icon"
-              name="grid-alt"
-              type="solid"
-              color="grey"
-            ></box-icon>
+          <FontAwesomeIcon icon={faBars} />
             <p className="specs-title">Genre</p>
           </span>
           <span className="specs__item--info">
@@ -58,13 +44,7 @@ export default function Specs() {
         </div>
         <div className="specs__item">
           <span className="specs__item--title">
-            <box-icon
-              size="md"
-              className="icon"
-              name="building"
-              type="solid"
-              color="grey"
-            ></box-icon>
+          <FontAwesomeIcon icon={faBuilding} />
             <p className="specs-title">Publisher</p>
           </span>
           <span className="specs__item--info">
@@ -75,13 +55,7 @@ export default function Specs() {
         </div>
         <div className="specs__item">
           <span className="specs__item--title">
-            <box-icon
-              size="md"
-              className="icon"
-              name="registered"
-              type="solid"
-              color="grey"
-            ></box-icon>
+          <FontAwesomeIcon icon={faChild} />
             <p className="specs-title">ESRB rating</p>
           </span>
           <span className="specs__item--info">
@@ -92,13 +66,7 @@ export default function Specs() {
         </div>
         <div className="specs__item">
           <span className="specs__item--title">
-            <box-icon
-              size="md"
-              className="icon"
-              name="visual-studio"
-              type="logo"
-              color="grey"
-            ></box-icon>
+          <FontAwesomeIcon icon={faGear} />
             <p className="specs-title">Supported play modes</p>
           </span>
           <span className="specs__item--info">
@@ -107,13 +75,7 @@ export default function Specs() {
         </div>
         <div className="specs__item">
           <span className="specs__item--title">
-            <box-icon
-              size="md"
-              className="icon"
-              name="file-blank"
-              type="solid"
-              color="grey"
-            ></box-icon>
+          <FontAwesomeIcon icon={faDatabase} />
             <p className="specs-title">Game file size</p>
           </span>
           <span className="specs__item--info">
@@ -122,12 +84,7 @@ export default function Specs() {
         </div>
         <div className="specs__item">
           <span className="specs__item--title">
-            <box-icon
-              size="md"
-              className="icon"
-              name="globe"
-              color="grey"
-            ></box-icon>
+          <FontAwesomeIcon icon={faGlobe} />
             <p className="specs-title">Supported languages</p>
           </span>
           <span className="specs__item--info">

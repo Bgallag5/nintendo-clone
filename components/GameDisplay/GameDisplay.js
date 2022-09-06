@@ -4,6 +4,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faHeart, } from "@fortawesome/free-regular-svg-icons";
 import { faDownload } from "@fortawesome/free-solid-svg-icons";
 import DisplaySlider from "./DisplaySlider";
+import ESRB from "../ESRB";
 
 
 
@@ -27,7 +28,8 @@ export default function GameDisplay() {
                     <div className="display__slider">
                         <DisplaySlider />
                     </div>
-                    <div className="rating text-small">
+                    <ESRB />
+                    {/* <div className="rating text-small">
                         <div className="rating-photo">
                             <Image className="img" src={require('../../public/images/e-rating.png')} alt="rating" layout="fill" />
                         </div>
@@ -35,7 +37,7 @@ export default function GameDisplay() {
                             <p>Fantasy Violence, Use of Alcohol, Use of Tobacco, Simulated Gambling, Mild Language, Mild Blood</p>
                             <p>Users Interact</p>
                         </div>
-                    </div>
+                    </div> */}
                 </div>
                 <div className="display__game--info ">
                     <p className="system">Nintendo Switch</p>

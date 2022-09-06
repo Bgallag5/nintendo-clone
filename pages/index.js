@@ -1,29 +1,24 @@
 import React from "react";
-import Head from "next/head";
 import Footer from "../components/Footer/Footer";
 import Header from "../components/Header/Header";
 import GameDisplay from "../components/GameDisplay/GameDisplay";
 import About from "../components/About/About";
 import Specs from "../components/Specs/Specs";
 import Advertisement from "../components/Advertisement";
+import Systems from "../components/Systems";
+import OnlineBanner from "../components/OnlineBanner";
 
 export default function Home() {
   return (
-    <>
-      <Head>
-        {/* <script
-        async
-          src="https://unpkg.com/boxicons@2.0.9/dist/boxicons.js"
-        ></script> */}
-      </Head>
-      <div className="app-container">
-        <Header />
-        <Advertisement />
-        <GameDisplay />
-        <About />
-        <Specs />
-        <Footer />
-      </div>
-    </>
+    <div className="app-container">
+      <Header />
+      <Advertisement />
+      <GameDisplay />
+      <About />
+      <Systems />
+      <Specs />
+      <OnlineBanner />
+      <Footer />
+    </div>
   );
 }

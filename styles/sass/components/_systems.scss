@@ -1,0 +1,72 @@
+.systems-container{
+    width: 100%;
+    height: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+   
+    margin: 4rem 0rem;
+
+}
+
+.systems{
+    height: 100%;
+    width: 75%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    gap: 2rem;
+    
+
+    & > * {
+        width: 50%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap: 1rem;
+        background-color: $color-offWhite;
+         padding: 1rem 0rem 3rem 0rem;
+    }
+
+    &__rating{
+        .esrb-container{
+            background-color: white;
+            width: 90%;
+            padding: 1.5rem 0rem 1.5rem .5rem;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+    }
+
+    &__supported{
+        .modes{
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+            gap: 1rem;
+            width: 90%;
+
+
+            .mode{
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+
+                &-img{
+                    height: 5rem;
+                    width: 8rem;
+                    position: relative;
+                    background-color: rgb(57, 60, 160);
+                    color: white;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                }
+            }
+        }
+    }
+
+
+}
